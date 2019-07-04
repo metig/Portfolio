@@ -43,7 +43,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    opacity: 0.9;
+   // opacity: 0.9;
     visibility: hidden;
 
 
@@ -64,7 +64,7 @@
     &-nav {
         margin: 0;
         padding: 0;
-        background:  darken($primary-color, 5);
+        background:  rgba(darken($primary-color, 5),0.9);
         list-style: none;
         transform: translate3d(0, -100%, 0);
         @include easeOut;
@@ -76,7 +76,7 @@
     }
     // Branding side
     &-branding {
-        background: $primary-color;
+        background: rgba($primary-color, 0.9);
         transform: translate3d(0, 100%, 0);
         @include easeOut;
 
@@ -87,7 +87,8 @@
         .portrait {
             width: 250px;
             height: 250px;
-            background: url(../img/profile1.jpg);
+            background: url(../img/profile.jpg);
+            background-size: cover;
             border-radius: 50%;
             opacity: 20;
             border: solid 3px $secondary-color;
@@ -112,7 +113,11 @@
          font-weight: 300;
          color: #fff;
          text-decoration: none;
-         @include easeOut;
+        @include easeOut;
+
+        &:hover {
+            color: $secondary-color;
+        }
          
 
      }

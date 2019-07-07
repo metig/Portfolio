@@ -18,12 +18,13 @@
     .menu-btn.close .btn-line:nth-child(2) {
       opacity: 0; }
     .menu-btn.close .btn-line:nth-child(3) {
-      transform: rotate(-45deg) translate(6px, -6px); }
+      transform: rotate(-45deg) translate(7px, -6px); }
 
 .menu {
   position: fixed;
   top: 0;
   width: 100%;
+  opacity: 0.9;
   visibility: hidden; }
   .menu.show {
     visibility: visible; }
@@ -39,14 +40,14 @@
   .menu-nav {
     margin: 0;
     padding: 0;
-    background: rgba(0, 1, 1, 0.9);
+    background: #000101;
     list-style: none;
     transform: translate3d(0, -100%, 0);
     transition: all 0.5s ease-out; }
     .menu-nav.show {
       transform: translate3d(0, 0, 0); }
   .menu-branding {
-    background: rgba(1, 17, 26, 0.9);
+    background: #01111a;
     transform: translate3d(0, 100%, 0);
     transition: all 0.5s ease-out; }
     .menu-branding.show {
@@ -54,16 +55,16 @@
     .menu-branding .portrait {
       width: 250px;
       height: 250px;
-      background: url(../img/profilebig.jpg);
-      background-size: cover;
+      background: url("../img/portrait.jpg");
       border-radius: 50%;
-      opacity: 20;
       border: solid 3px #f39ecd; }
   .menu .nav-item {
-    transform: traslate3d(600px, 0, 0);
+    transform: translate3d(600px, 0, 0);
     transition: all 0.5s ease-out; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
+    .menu .nav-item.current > a {
+      color: #f39ecd; }
   .menu .nav-link {
     display: inline-block;
     position: relative;
@@ -97,7 +98,7 @@ body {
   color: #fff;
   height: 100%;
   margin: 0;
-  font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
   body#bg-img {
     background: url(../img/his.jpg);
@@ -147,10 +148,10 @@ main {
   main .icons {
     margin-top: 1rem; }
     main .icons a {
-      padding: 0.4rem; }
+      padding: 0.4rem;
+      transition: all 0.5s ease-out; }
       main .icons a:hover {
-        color: #f39ecd;
-        transition: all 0.5s ease-out; }
+        color: #f39ecd; }
   main#home {
     overflow: hidden; }
     main#home h1 {
@@ -176,19 +177,19 @@ main {
   .about-info .job-3 {
     grid-area: job3; }
   .about-info .job {
-    background: liyghten(#01111a, 5);
+    background: #022133;
     padding: 0.5rem;
     border-bottom: #f39ecd 5px solid; }
 
-.Projects {
+.projects {
   display: grid;
   grid-gap: 0.7rem;
   grid-template-columns: repeat(3, 1fr); }
-  .Projects img {
+  .projects img {
     width: 100%;
     border: 3px #fff solid; }
-    .Projects img:hover {
-      opacity: 0.7;
+    .projects img:hover {
+      opacity: 0.5;
       border-color: #f39ecd;
       transition: all 0.5s ease-out; }
 
@@ -213,7 +214,7 @@ main {
 
 .btn, .btn-dark, .btn-light {
   display: block;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   border: 0;
   margin-bottom: 0.3rem; }
   .btn:hover, .btn-dark:hover, .btn-light:hover {
@@ -225,8 +226,8 @@ main {
   color: #fff; }
 
 .btn-light {
-  background: #03314b;
-  color: #fff; }
+  background: #23abf7;
+  color: #3b3a3a; }
 
 #main-footer {
   text-align: center;
@@ -236,11 +237,11 @@ main {
   height: 60px; }
 
 @media screen and (min-width: 1171px) {
-  .Projects {
+  .projects {
     grid-template-columns: repeat(4, 1fr); } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
-  .Projects {
+  .projects {
     grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 768px) {
@@ -251,30 +252,28 @@ main {
       line-height: 1;
       margin-bottom: 1rem; }
   ul.menu-nav,
-  div.menu-branding-branding {
+  div.menu-branding {
     float: none;
     width: 100%;
     min-height: 0; }
     ul.menu-nav.show,
-    div.menu-branding-branding.show {
+    div.menu-branding.show {
       transform: translate3d(0, 0, 0); }
   .menu-nav {
     height: 75vh;
     transform: translate3d(-100%, 0, 0);
-    font-size: 24; }
+    font-size: 24px; }
   .menu-branding {
     height: 25vh;
-    width: 100vw;
     transform: translate3d(100%, 0, 0); }
     .menu-branding .portrait {
-      background: url(../img/profilesmall.jpg);
-      background-size: cover;
+      background: url("../img/profilesmall.jpg");
       width: 150px;
       height: 150px; }
   .about-info {
     grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
     grid-template-columns: 1fr; }
-  .Projects {
+  .projects {
     grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
@@ -285,5 +284,5 @@ main {
     main .lg-heading {
       margin-top: 1rem;
       font-size: 5rem; }
-  .Projects {
+  .projects {
     grid-template-columns: 1fr; } }
